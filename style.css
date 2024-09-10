@@ -93,11 +93,11 @@ body {
 }
 
 .readStatus {
-    background-color: #6ee7b7;
+    background-color: #4ade80;
 }
 
 .readStatus:hover, .readStatus:active {
-    background-color: #34d399;
+    background-color: #22c55e;
 }
 
 .delete {
