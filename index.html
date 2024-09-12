@@ -22,24 +22,24 @@
                 </div>
                 <form method="dialog" id="addBookForm">
                     <p>
-                        <input type="text" placeholder="Title" class="bookInput" maxlength="100" required>
+                        <input type="text" placeholder="Title" id="title" class="bookInput" maxlength="100" required>
                     </p>
                     <p>
-                        <input type="text" placeholder="Author" class="bookInput" maxlength="100" required>
+                        <input type="text" placeholder="Author" id="author" class="bookInput" maxlength="100" required>
                     </p>
                     <p>
-                        <input type="number" placeholder="Pages" class="bookInput" max="3000" required>
+                        <input type="number" placeholder="Pages" id="pages" class="bookInput" max="3000" required>
                     </p>
                     <p class="toggleReadStatus">
                         <label>
                             <input type="radio" name="status" value="Read"> Have Read
                         </label>
                         <label>
-                            <input type="radio" name="status" value="Not Read" checked> Unread
+                            <input type="radio" name="status" value="Unread" checked> Unread
                         </label>
                     </p>
                     <p>
-                        <button type="submit" class="submitBook">Submit</button>
+                        <button type="submit" id="submitBook">Submit</button>
                     </p>
                 </form>
             </dialog>

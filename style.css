@@ -126,7 +126,7 @@ body {
     gap: 15px;
 }
 
-.submitBook {
+#submitBook {
     width: 100%;
     font-size: 18px;
     padding: 10px;
@@ -135,7 +135,7 @@ body {
     background-color: #86efac;
 }
 
-.submitBook:hover {
+#submitBook:hover {
     background-color: #4ade80;
 }
 
