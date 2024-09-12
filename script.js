@@ -102,9 +102,16 @@ modalCloseBtn.addEventListener("click", (e) => {
 });
 
 submitBook.addEventListener("click", (event) => {
-  event.preventDefault();
-  addBookToLibrary();
-  showBookCards();
-  addBookForm.reset();
-  dialog.close();
+  let isFormValid = addBookForm.checkValidity();
+
+  if(!isFormValid) {
+    addBookForm.reportValidity();
+  } else {
+    event.preventDefault();
+    addBookToLibrary();
+    showBookCards();
+    addBookForm.reset(); 
+    dialog.close();
+  }
 })
+
