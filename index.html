@@ -16,32 +16,34 @@
         <div class="content">
             <div class="buttonContainer"><button id="addButton" type="submit">+ New Book</button></div>
             <dialog id="modal">
-                <div class="modalHeader">
-                    <h3 class="modalText">Add Book</h3>
-                    <button type="submit" id="closeButton">×</button>
+                <div id="modalContainer">
+                    <div class="modalHeader">
+                        <h3 class="modalText">Add Book</h3>
+                        <button type="submit" id="closeButton">×</button>
+                    </div>
+                    <form method="dialog" id="addBookForm">
+                        <p>
+                            <input type="text" placeholder="Title" id="title" class="bookInput" maxlength="100" required>
+                        </p>
+                        <p>
+                            <input type="text" placeholder="Author" id="author" class="bookInput" maxlength="100" required>
+                        </p>
+                        <p>
+                            <input type="number" placeholder="Pages" id="pages" class="bookInput" max="3000" required>
+                        </p>
+                        <p class="toggleReadStatus">
+                            <label>
+                                <input type="radio" name="status" value="Read"> Have Read
+                            </label>
+                            <label>
+                                <input type="radio" name="status" value="Unread" checked> Unread
+                            </label>
+                        </p>
+                        <p>
+                            <button type="submit" id="submitBook">Submit</button>
+                        </p>
+                    </form>
                 </div>
-                <form method="dialog" id="addBookForm">
-                    <p>
-                        <input type="text" placeholder="Title" id="title" class="bookInput" maxlength="100" required>
-                    </p>
-                    <p>
-                        <input type="text" placeholder="Author" id="author" class="bookInput" maxlength="100" required>
-                    </p>
-                    <p>
-                        <input type="number" placeholder="Pages" id="pages" class="bookInput" max="3000" required>
-                    </p>
-                    <p class="toggleReadStatus">
-                        <label>
-                            <input type="radio" name="status" value="Read"> Have Read
-                        </label>
-                        <label>
-                            <input type="radio" name="status" value="Unread" checked> Unread
-                        </label>
-                    </p>
-                    <p>
-                        <button type="submit" id="submitBook">Submit</button>
-                    </p>
-                </form>
             </dialog>
             <div id="bookCards"></div>
         </div>

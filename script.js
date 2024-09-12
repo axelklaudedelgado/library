@@ -83,6 +83,12 @@ function addBookToLibrary() {
   myLibrary.push(newBook);
 }
 
+function closeDialog(event) {
+  if (event.target === dialog) {
+    dialog.close();
+  }
+}
+
 const myLibrary = [];
 
 const showBtn = document.querySelector("#addButton");
@@ -115,3 +121,4 @@ submitBook.addEventListener("click", (event) => {
   }
 })
 
+dialog.addEventListener("click", closeDialog);
