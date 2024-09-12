@@ -5,12 +5,17 @@ function Book(title, author, pages, readStatus) {
   this.readStatus = readStatus;
 }
 
-function addBookToLibrary() {
+function getInputValues() {
   const titleValue = document.querySelector("#title").value;
   const authorValue = document.querySelector("#author").value;
   const pagesValue = document.querySelector("#pages").value;
   const checkedValue = document.querySelector('input[name="status"]:checked').value;
-  myLibrary.push(new Book(titleValue, authorValue, pagesValue, checkedValue));
+  return new Book(titleValue, authorValue, pagesValue, checkedValue);
+}
+
+function addBookToLibrary() {
+  const newBook = getInputValues();
+  myLibrary.push(newBook);
 }
 
 const myLibrary = [
