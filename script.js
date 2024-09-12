@@ -11,9 +11,7 @@ function resetBookCards() {
 
 function showBookCards() {
   resetBookCards();
-  for(let book of myLibrary) {
-    createBookCard(book);
-  }
+  myLibrary.forEach(book => createBookCard(book));
 }
 
 function createBookCard(book) {
