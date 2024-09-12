@@ -6,13 +6,15 @@ function Book(title, author, pages, readStatus) {
 }
 
 function deleteBookCard() {
-  let index = this.parentElement.getAttribute('data-index');
+  let cardContainer = this.parentElement.parentElement;
+  let index = cardContainer.getAttribute('data-index');
   myLibrary.splice(index, 1);
   showBookCards();
 }
 
 function toggleReadStatus() {
-  let index = this.parentElement.getAttribute('data-index');
+  let cardContainer = this.parentElement.parentElement;
+  let index = cardContainer.getAttribute('data-index');
   let currentReadStatus = myLibrary[index].readStatus;
   if(currentReadStatus == "Unread") {
     myLibrary[index].readStatus = "Read";
@@ -37,12 +39,14 @@ function createBookCard(book, index) {
   const title = document.createElement('div');
   const author = document.createElement('div');
   const pages = document.createElement('div');
+  const buttonGroup = document.createElement('div');
   const readStatus = document.createElement('button');
   const deleteButton = document.createElement('button');
 
   card.classList.add("card");
   card.dataset.index = index;
   readStatus.classList.add("cardButton");
+  buttonGroup.classList.add("buttonGroup");
   deleteButton.classList.add("cardButton");
   deleteButton.classList.add("redButton");
   readStatus.onclick = toggleReadStatus;
@@ -66,8 +70,9 @@ function createBookCard(book, index) {
   card.appendChild(title);
   card.appendChild(author);
   card.appendChild(pages);
-  card.appendChild(readStatus);
-  card.appendChild(deleteButton);
+  card.appendChild(buttonGroup);
+  buttonGroup.appendChild(readStatus);
+  buttonGroup.appendChild(deleteButton);
 }
 
 function getInputValues() {
