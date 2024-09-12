@@ -5,16 +5,22 @@ function Book(title, author, pages, readStatus) {
   this.readStatus = readStatus;
 }
 
+function deleteBookCard() {
+  let index = this.parentElement.getAttribute('data-index');
+  myLibrary.splice(index, 1);
+  showBookCards();
+}
+
 function resetBookCards() {
   bookCards.innerHTML = "";
 }
 
 function showBookCards() {
   resetBookCards();
-  myLibrary.forEach(book => createBookCard(book));
+  myLibrary.forEach((book,index) => createBookCard(book,index));
 }
 
-function createBookCard(book) {
+function createBookCard(book, index) {
   const card = document.createElement('div');
   const title = document.createElement('div');
   const author = document.createElement('div');
@@ -23,9 +29,11 @@ function createBookCard(book) {
   const deleteButton = document.createElement('button');
 
   card.classList.add("card");
+  card.dataset.index = index;
   readStatus.classList.add("cardButton");
   deleteButton.classList.add("cardButton");
   deleteButton.classList.add("redButton");
+  deleteButton.onclick = deleteBookCard;
   
   title.textContent = `Title: ${book.title}`;
   author.textContent = `Author: ${book.author}`;
