@@ -7,14 +7,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
     <div class="main">
         <div class="header">
             <div class="headerText">Library</div>
         </div>
         <div class="content">
-            <div class="buttonContainer"><button class="addButton" type="submit">+ New Book</button></div>
+            <div class="buttonContainer"><button id="addButton" type="submit">+ New Book</button></div>
+            <dialog id="modal">
+                <div class="modalHeader">
+                    <h3 class="modalText">Add Book</h3>
+                    <button type="submit" id="closeButton">×</button>
+                </div>
+                <form method="dialog" id="addBookForm">
+                    <p>
+                        <input type="text" placeholder="Title" class="bookInput" maxlength="100" required>
+                    </p>
+                    <p>
+                        <input type="text" placeholder="Author" class="bookInput" maxlength="100" required>
+                    </p>
+                    <p>
+                        <input type="number" placeholder="Pages" class="bookInput" max="3000" required>
+                    </p>
+                    <p class="toggleReadStatus">
+                        <label>
+                            <input type="radio" name="status" value="Read"> Have Read
+                        </label>
+                        <label>
+                            <input type="radio" name="status" value="Not Read" checked> Unread
+                        </label>
+                    </p>
+                    <p>
+                        <button type="submit" class="submitBook">Submit</button>
+                    </p>
+                </form>
+            </dialog>
             <div class="bookCards">
                 <div class="card">
                     <div>Title:"John"</div>
