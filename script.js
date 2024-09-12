@@ -71,6 +71,7 @@ const dialog = document.querySelector("#modal");
 const modalCloseBtn = dialog.querySelector("#closeButton");
 const submitBook = document.querySelector("#submitBook");
 const bookCards = document.querySelector("#bookCards");
+const addBookForm = document.querySelector("#addBookForm");
 
 showBtn.addEventListener("click", () => {
   dialog.showModal();
@@ -85,5 +86,6 @@ submitBook.addEventListener("click", (event) => {
   event.preventDefault();
   addBookToLibrary();
   showBookCards();
+  addBookForm.reset();
   dialog.close();
 })
