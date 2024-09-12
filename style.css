@@ -139,7 +139,7 @@ body {
     background-color: #4ade80;
 }
 
-.bookCards {
+#bookCards {
     padding: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -168,18 +168,18 @@ body {
     border: none;
 }
 
-.readStatus {
+.greenButton {
     background-color: #86efac;
 }
 
-.readStatus:hover {
+.greenButton:hover {
     background-color: #4ade80;
 }
 
-.delete {
+.redButton {
     background-color: #fca5a5;
 }
 
-.delete:hover, .delete:active {
+.redButton:hover, .delete:active {
     background-color: #f87171;
 }
