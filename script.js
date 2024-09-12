@@ -11,6 +11,18 @@ function deleteBookCard() {
   showBookCards();
 }
 
+function toggleReadStatus() {
+  let index = this.parentElement.getAttribute('data-index');
+  let currentReadStatus = myLibrary[index].readStatus;
+  if(currentReadStatus == "Unread") {
+    myLibrary[index].readStatus = "Read";
+    showBookCards();
+  } else {
+    myLibrary[index].readStatus = "Unread";
+    showBookCards();
+  }
+}
+
 function resetBookCards() {
   bookCards.innerHTML = "";
 }
@@ -33,6 +45,7 @@ function createBookCard(book, index) {
   readStatus.classList.add("cardButton");
   deleteButton.classList.add("cardButton");
   deleteButton.classList.add("redButton");
+  readStatus.onclick = toggleReadStatus;
   deleteButton.onclick = deleteBookCard;
   
   title.textContent = `Title: ${book.title}`;
